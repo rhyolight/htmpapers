@@ -19,10 +19,14 @@
 # http://numenta.org/licenses/
 # ----------------------------------------------------------------------
 FROM python:2.7
-COPY . /work
 
-# Install code and dependecies
+# Install python dependencies
+COPY requirements.txt /work/requirements.txt
 WORKDIR /work
+RUN pip install -r requirements.txt
+
+# Copy and Install code
+COPY . /work
 RUN python setup.py develop
 
 # Download MNIST dataset
@@ -33,7 +37,7 @@ RUN python -c 'from torchvision import datasets; \
 
 # Download Google Speech Commands Dataset
 WORKDIR /work/projects/speech_commands/data
-RUN download_speech_commands.sh
+RUN ./download_speech_commands.sh
 
 # Experiments Root
 WORKDIR /work
