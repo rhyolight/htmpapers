@@ -30,6 +30,14 @@ docker build -t htmpaper .
 docker run -it htmpaper /bin/bash
 ```  
 
+After running this last command, you'll be given a shell into the docker container. To get into the directory with this README file:
+
+```
+cd arxiv/how_can_we_be_so_dense
+```
+
+Projects are in the `projects/` directory. 
+
 ### Training the models
 
 All experiments have a common script called `run_experiment.py` located in the root of each project used to train and test the models. Once the models are trained, you may use the other script in the specific project folder to generate the figures and data used in the paper.
