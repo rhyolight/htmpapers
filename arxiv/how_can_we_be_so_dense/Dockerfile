@@ -18,7 +18,20 @@
 #
 # http://numenta.org/licenses/
 # ----------------------------------------------------------------------
-FROM python:2.7
+FROM python:3.7
+
+RUN apt-get update && \
+    apt-get install -y \
+    git-core \
+    gcc \
+    g++ \
+    cmake \
+    libblas-dev \
+    liblapack-dev 
+    # zlib1g-dev \
+    # bzip2 \
+    # libyaml-dev \
+    # libyaml-0-2
 
 # Install python dependencies
 COPY requirements.txt /work/requirements.txt
