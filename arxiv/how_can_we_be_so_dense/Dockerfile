@@ -25,13 +25,7 @@ RUN apt-get update && \
     git-core \
     gcc \
     g++ \
-    cmake \
-    libblas-dev \
-    liblapack-dev 
-    # zlib1g-dev \
-    # bzip2 \
-    # libyaml-dev \
-    # libyaml-0-2
+    cmake 
 
 # Install python dependencies
 COPY requirements.txt /work/requirements.txt
